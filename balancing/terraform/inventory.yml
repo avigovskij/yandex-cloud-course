@@ -1,0 +1,6 @@
+ungroupped:
+  hosts:
+    51.250.69.92:
+      ansible_ssh_user: ubuntu
+    51.250.8.152:
+      ansible_ssh_user: ubuntu

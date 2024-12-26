@@ -1,0 +1,20 @@
+---
+- name: Balancing task1
+  hosts: all
+  become: true
+  become_user: root
+
+  tasks:
+    - name: Install NGINX
+      ansible.builtin.package:
+        name: nginx
+
+    - name: Change NGINX index.html
+      ansible.builtin.copy:
+        src: index.html
+        dest: /var/www/html/index.nginx-debian.html
+    
+    - name: Reload nginx service
+      ansible.builtin.service:
+        name: nginx
+        state: reloaded
